@@ -1,18 +1,17 @@
 <template>
   <div id="news-form">
-    <form action="/" class="form-signin" method="post">
+    <b-form class="form-signin" @submit="onSubmit">
       <div class="text-center mb-4">
         <img src="../assets/logo.svg" style="max-height: 100px">
         <p>Qual a chance da sua notícia ser verdadeira?</p>
       </div>
-      <div class="form-label-group">
-        <input autofocus class="form-control form-control-lg" name="article" placeholder="Link da notícia" required
-               type="url">
-      </div>
-      <button class="btn btn-lg btn-search btn-block" type="submit">
+      <b-form-group id="articleGroup">
+        <b-form-input id="article" class="form-control-lg" placeholder="Link da notícia" required type="url" v-model="article"></b-form-input>
+      </b-form-group>
+      <b-button :block=true size="lg" type="submit" variant="search">
         <i class="fas fa-search"></i> Analisar
-      </button>
-    </form>
+      </b-button>
+    </b-form>
   </div>
 </template>
 
@@ -21,8 +20,15 @@
     name: "news-form",
     data() {
       return {
-        items: []
+        items: [],
+        article: ""
       };
+    },
+    methods: {
+      onSubmit (evt) {
+        evt.preventDefault();
+        alert(JSON.stringify(this.article));
+      }
     }
   };
 </script>
