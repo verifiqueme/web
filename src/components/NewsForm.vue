@@ -6,14 +6,7 @@
         <p>Qual a chance da sua notícia ser verdadeira?</p>
       </div>
       <div class="form-label-group">
-        <input
-          type="url"
-          name="article"
-          class="form-control form-control-lg"
-          placeholder="Link da notícia"
-          required
-          autofocus
-        >
+        <input type="url" name="article" class="form-control form-control-lg" placeholder="Link da notícia" required autofocus>
       </div>
       <button class="btn btn-lg btn-search btn-block" type="submit">
         <i class="fas fa-search"></i> Analisar
