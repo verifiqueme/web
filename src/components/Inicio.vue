@@ -3,6 +3,7 @@
     <b-container class="text-center content">
       <b-row>
         <b-col>
+          <news-form></news-form>
         </b-col>
       </b-row>
     </b-container>
@@ -10,10 +11,12 @@
 </template>
 
 <script>
+import NewsForm from "./NewsForm";
 
 export default {
-  name: "Hello",
+  name: "Inicio",
   components: {
+    NewsForm
   },
   data() {
     return {
@@ -26,17 +29,16 @@ export default {
 <style>
 #hello {
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  width: 100%;
-  max-width: 3%;
-  padding: 15px;
-  margin: auto;
-}
-.content {
   position: absolute;
   transform: translate(-50%, -40%);
   left: 50%;
