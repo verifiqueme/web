@@ -11,7 +11,6 @@
 
 <script>
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-vue/dist/bootstrap-vue.min.css";
 export default {
   name: "navbar",
   created() {
