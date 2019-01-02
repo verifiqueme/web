@@ -30,7 +30,7 @@ export default {
   #app a,
   #app a:focus,
   #app a:hover {
-    color: #fff;
+    color: #000;
   }
 
   /*
