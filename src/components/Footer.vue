@@ -1,8 +1,8 @@
 <template>
     <div class="mastfoot mt-auto">
       <div class="inner">
-        <p>Por <a href="https://twitter.com/guiscaranse">@guiscaranse</a>.</p>
-        <p>Veja este projeto no <a href=""><font-awesome-icon :icon="['fab', 'github']"  /> Github</a>.</p>
+        <p>Por <a href="https://twitter.com/guiscaranse" target="_blank">@guiscaranse</a>.</p>
+        <p>Veja este projeto no <a href="https://github.com/verificame"><font-awesome-icon :icon="['fab', 'github']"  /> Github</a>.</p>
       </div>
     </div>
 </template>
