@@ -1,10 +1,12 @@
 <template>
-  <div class="container d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white">
-    <h5 class="my-0 mr-md-auto font-weight-normal"></h5>
-    <nav :key="item.path" class="my-2 my-md-0 mr-md-3" v-for="item in items">
-      <router-link :to="item.path" active-class="active" class="p-2 nav-link" exact>{{ item.name }}</router-link>
-    </nav>
-  </div>
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <nav :key="item.path" class="nav nav-masthead justify-content-center" v-for="item in items">
+        <router-link :to="item.path" active-class="active" class=" nav-link" exact>{{ item.name }}</router-link>
+      </nav>
+    </div>
+  </header>
+
 </template>
 
 <script>
@@ -27,12 +29,43 @@
 </script>
 
 <style>
-  .nav-link {
-    color: #253031 !important;
+  .masthead {
+    margin-bottom: 2rem;
   }
 
-  .active {
+  .masthead-brand {
+    margin-bottom: 0;
+  }
+
+  .nav-masthead .nav-link {
+    padding: .25rem 0;
+    font-weight: 700;
+    color: #253031;
+    background-color: transparent;
+    border-bottom: .25rem solid transparent;
+  }
+
+  .nav-masthead .nav-link:hover,
+  .nav-masthead .nav-link:focus {
+    border-bottom-color: rgba(255, 255, 255, .25);
+  }
+
+  .nav-masthead .nav-link + .nav-link {
+    margin-left: 1rem;
+  }
+
+  .nav-masthead .active {
     color: #000 !important;
+    border-bottom-color: #000;
     font-weight: bold;
+  }
+
+  @media (min-width: 48em) {
+    .masthead-brand {
+      float: left;
+    }
+    .nav-masthead {
+      float: right;
+    }
   }
 </style>
