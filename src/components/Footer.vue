@@ -1,7 +1,7 @@
 <template>
     <div class="mastfoot mt-auto">
       <div class="inner">
-        <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.
+        <p>by <a href="https://twitter.com/guiscaranse">@guiscaranse</a>. Veja no <a href=""><font-awesome-icon :icon="['fab', 'github']"  /></a>.
         </p>
       </div>
     </div>

@@ -6,13 +6,16 @@ import router from './routes'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {fas} from '@fortawesome/free-solid-svg-icons'
+import {fab} from '@fortawesome/free-brands-svg-icons'
 // Ext
 import BootstrapVue from 'bootstrap-vue'
 
 library.add(fas);
+library.add(fab);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.use(BootstrapVue);
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
