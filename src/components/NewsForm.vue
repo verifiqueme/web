@@ -7,6 +7,7 @@
       </div>
       <b-form-group id="articleGroup">
         <b-form-input id="article" class="form-control-lg" placeholder="Link da notícia" required type="url" v-model="article"></b-form-input>
+        <b-form-invalid-feedback v-if="error.length" force-show="true">{{ error }}</b-form-invalid-feedback>
       </b-form-group>
       <b-button :block=true size="lg" type="submit" variant="search">
         <i class="fas fa-search"></i> Analisar
@@ -16,18 +17,25 @@
 </template>
 
 <script>
+  import isUrl from "is-url";
+
   export default {
     name: "news-form",
     data() {
       return {
         items: [],
+        error: "",
         article: ""
       };
     },
     methods: {
       onSubmit (evt) {
         evt.preventDefault();
-        alert(JSON.stringify(this.article));
+        if (this.article !== '' && isUrl(this.article)) {
+          this.$emit('noticiaAnalise', this.article)
+        }else{
+          this.error = "Insira uma notícia valida."
+        }
       }
     }
   };
