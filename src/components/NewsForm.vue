@@ -2,7 +2,7 @@
   <div id="news-form">
     <b-form class="form-signin" @submit="onSubmit">
       <div class="text-center mb-4">
-        <img src="../assets/logo.svg" style="max-height: 100px">
+        <img src="../assets/logo.svg" class="img-fluid">
         <p>Qual a chance da sua notícia ser verdadeira?</p>
       </div>
       <b-form-group id="articleGroup">
