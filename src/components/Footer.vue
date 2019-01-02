@@ -15,6 +15,6 @@
 
 <style scoped>
   .mastfoot {
-    color: rgba(255, 255, 255, .5);
+    color: rgba(0, 0, 0, .5);
   }
 </style>
