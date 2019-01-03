@@ -1,11 +1,12 @@
 <template>
   <div id="hello">
-    <b-container class="text-center content">
-      <b-row>
-        <b-col>
+    <b-container class="content">
+      <b-row v-if="submited !== true">
+        <b-col class="text-center">
           <news-form @noticiaAnalise="analise"></news-form>
         </b-col>
       </b-row>
+      <score-card></score-card>
     </b-container>
   </div>
 </template>
@@ -14,15 +15,17 @@
   import NewsForm from "./NewsForm";
   import base64url from "base64-url";
   import axios from "axios";
+  import ScoreCard from "./ScoreCard";
 
   export default {
     name: "Inicio",
     components: {
-      NewsForm
+      ScoreCard,
+      NewsForm,
     },
     data() {
       return {
-        msg: "Olá mundo",
+        submited: true,
         info: ""
       };
     },
@@ -40,6 +43,5 @@
 </script>
 
 <style>
-  #hello {
-  }
+
 </style>
