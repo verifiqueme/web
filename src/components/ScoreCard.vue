@@ -2,13 +2,14 @@
   <div class="card">
     <div class="box">
       <div class="img">
-        <score valor="50" cor="orange"></score>
+        <score :valor="valor"></score>
       </div>
       <h2>Teste<br><span>Ay Lmaoooo</span></h2>
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et.</p>
       <span>
             <ul>
+                <li><a href="#"><font-awesome-icon :icon="['fab', 'twitter']" ></font-awesome-icon></a></li>
                 <li><a href="#"><font-awesome-icon :icon="['fab', 'twitter']" ></font-awesome-icon></a></li>
             </ul>
         </span>
@@ -21,6 +22,7 @@
 
   export default {
     name: "ScoreCard",
+    props: ['valor'],
     components: {
       Score
     }

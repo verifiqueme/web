@@ -1,7 +1,7 @@
 <template>
   <div class="flex-wrapper">
     <div class="single-chart">
-      <svg class="circular-chart" :class="cor" viewBox="0 0 36 36">
+      <svg class="circular-chart orange" viewBox="0 0 36 36">
         <path class="circle-bg"
               d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
@@ -20,7 +20,7 @@
 <script>
   export default {
     name: "score",
-    props: ['valor', 'cor']
+    props: ['valor']
   }
 </script>
 
