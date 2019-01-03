@@ -45,7 +45,6 @@ export default {
   body {
     display: -ms-flexbox;
     display: flex;
-    color: #fff;
   }
 
   .cover-container {
@@ -57,9 +56,5 @@ export default {
    */
   .cover {
     padding: 0 1.5rem;
-  }
-  .cover .btn-lg {
-    padding: .75rem 1.25rem;
-    font-weight: 700;
   }
 </style>
