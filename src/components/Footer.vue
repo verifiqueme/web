@@ -9,7 +9,7 @@
 
 <script>
   export default {
-    name: "footer"
+    name: "cfooter"
   }
 </script>
 
