@@ -1,19 +1,31 @@
 <template>
   <div id="hello">
     <b-container class="content">
-      <b-row v-if="submited !== true">
+      <b-row v-if="error">
+        <b-col>
+          <div class="alert alert-danger" role="alert">
+            Não foi possível completar sua solicitação. Tente novamente mais tarde.
+            Se você acredita que isto é um problema sério, abra uma <a href="https://github.com/verificame/core">reclamação</a> em nosso repositório.
+          </div>
+        </b-col>
+      </b-row>
+      <b-row v-if="submited !== true && info === ''">
         <b-col class="text-center">
           <news-form @noticiaAnalise="analise"></news-form>
         </b-col>
       </b-row>
-      <b-row v-if="loading !== false">
-        <b-col>
+      <b-row>
+        <b-col v-if="submited !== false && info === ''">
           <p>Analisando a notícia :)</p>
-          <b-progress :value="counter" variant="success" striped animated="true" class="mb-2"></b-progress>
+          <b-progress :animated="true" :value="counter" class="mb-2" striped variant="success"></b-progress>
         </b-col>
       </b-row>
-      <b-row  v-if="info">
-        <score-card :valor="info"></score-card>
+      <b-row v-if="info">
+        <b-col>
+          <b-row>
+            <score-card @resetAction="reset" :artigo="artigo" :valor="info"></score-card>
+          </b-row>
+        </b-col>
       </b-row>
     </b-container>
   </div>
@@ -34,31 +46,42 @@
     data() {
       return {
         submited: false,
-        loading: false,
         info: "",
-        counter: 10
+        artigo: [],
+        counter: 10,
+        error: false
       };
     },
+    timers: {
+      counterUp: {time: 1000, autostart: false, repeat: true}
+    },
     methods: {
-      countUp(){
-        setTimeout(function() {
-          this.counter += 0.75;
-        }, 1000);
+      counterUp() {
+        this.counter = this.counter + 1.5;
+      },
+      reset() {
+        this.submited = false;
+        this.info = "";
+        this.counter = 10;
+        this.$timer.stop('counterUp');
       },
       analise(noticia) {
         this.counter = 10;
-        this.countUp();
+        this.$timer.start('counterUp');
         let encoded = base64url.encode(noticia);
         this.submited = true;
-        this.loading = true;
         axios
           .get('https://verfcme-core.now.sh/api/' + encoded)
           .then(response => {
-            this.loading = false;
+            console.log(response.data);
+            this.artigo = response.data['info'];
             this.info = Math.round((response.data['response'] * 100));
-
+            this.$timer.stop('counterUp');
           })
-          .catch(error => console.log(error))
+          .catch(error => {
+            this.reset();
+            this.error = true;
+          })
       }
     }
   };

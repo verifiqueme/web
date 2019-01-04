@@ -7,6 +7,7 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {fas} from '@fortawesome/free-solid-svg-icons'
 import {fab} from '@fortawesome/free-brands-svg-icons'
+import VueTimers from 'vue-timers'
 // Ext
 import BootstrapVue from 'bootstrap-vue'
 
@@ -15,6 +16,7 @@ library.add(fab);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.use(BootstrapVue);
+Vue.use(VueTimers);
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

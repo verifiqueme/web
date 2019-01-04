@@ -20,7 +20,8 @@
     "is-url": "^1.2.4",
     "jquery": "^3.3.1",
     "vue": "^2.5.11",
-    "vue-router": "^3.0.2"
+    "vue-router": "^3.0.2",
+    "vue-timers": "^1.10.0"
   },
   "browserslist": [
     "> 1%",
