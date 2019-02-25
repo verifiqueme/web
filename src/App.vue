@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <section class="hero is-bold is-fullheight">
+    <section class="hero  is-fullheight">
       <!-- Hero head: will stick at the top -->
       <div class="hero-head">
         <v-nav></v-nav>
