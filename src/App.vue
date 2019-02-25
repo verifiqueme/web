@@ -1,60 +1,17 @@
 <template>
-  <div id="app" class="text-center cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <navbar></navbar>
-    <main role="main" class="inner cover">
+  <div id="app">
       <router-view></router-view>
-    </main>
-    <Footer></Footer>
   </div>
 </template>
 
 <script>
-// Assets
-import "bootstrap/dist/css/bootstrap.min.css";
-import 'bootstrap-vue/dist/bootstrap-vue.min.css'
-
-// Components
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
 export default {
   name: "app",
   components: {
-    Navbar,
-    Footer
   }
 };
 </script>
 
 <style>
-  #app a,
-  #app a:focus,
-  #app a:hover {
-    color: #000;
-  }
-
-  /*
-   * Base structure
-   */
-
-  html,
-  body {
-    height: 100%;
-  }
-
-  body {
-    display: -ms-flexbox;
-    display: flex;
-  }
-
-  .cover-container {
-    max-width: 42em;
-  }
-
-  /*
-   * Cover
-   */
-  .cover {
-    padding: 0 1.5rem;
-  }
 </style>
