@@ -36,6 +36,8 @@
     },
     methods: {
       enviar() {
+        if(!this.url)return;
+
         this.hasSubmit = true;
         if (!isUrl(this.url)) {
           this.$toast.open({
