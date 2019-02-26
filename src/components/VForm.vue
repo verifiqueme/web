@@ -21,12 +21,14 @@
         </div>
       </div>
     </div>
-    <div class="columns">
-      <div class="column">
-        <hr/>
-        <result></result>
+    <b-collapse :open="false">
+      <div class="columns">
+        <div class="column">
+          <hr/>
+          <result></result>
+        </div>
       </div>
-    </div>
+    </b-collapse>
   </div>
 </template>
 
