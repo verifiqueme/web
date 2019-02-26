@@ -16,6 +16,7 @@
     "is-url": "^1.2.4",
     "jquery": "^3.3.1",
     "vue": "^2.6.7",
+    "vue-animate-number": "^0.4.2",
     "vue-router": "^3.0.2",
     "vue-timers": "^1.10.0"
   },
