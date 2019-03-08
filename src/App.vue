@@ -1,60 +1,49 @@
 <template>
-  <div id="app" class="text-center cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <navbar></navbar>
-    <main role="main" class="inner cover">
-      <router-view></router-view>
-    </main>
-    <Footer></Footer>
+  <div id="app">
+    <section class="hero  is-fullheight">
+      <!-- Hero head: will stick at the top -->
+      <div class="hero-head">
+        <v-nav></v-nav>
+      </div>
+
+      <!-- Hero content: will be in the middle -->
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <router-view></router-view>
+        </div>
+      </div>
+
+      <!-- Hero footer: will stick at the bottom -->
+      <div class="hero-foot">
+        <div class="container">
+          <div class="content has-text-centered">
+            <p>
+              <strong>Feito com <i class="fas fa-heart has-text-danger"></i> por <a href="https://twitter.com/guiscaranse" target="_blank">@guiscaranse</a></strong>
+            </p>
+            <a>
+              <i class="fab fa-github"></i> Código-fonte
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
-// Assets
-import "bootstrap/dist/css/bootstrap.min.css";
-import 'bootstrap-vue/dist/bootstrap-vue.min.css'
+  import VNav from "./components/VNav";
 
-// Components
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-
-export default {
-  name: "app",
-  components: {
-    Navbar,
-    Footer
-  }
-};
+  export default {
+    name: "app",
+    components: {
+      VNav
+    }
+  };
 </script>
 
 <style>
-  #app a,
-  #app a:focus,
-  #app a:hover {
-    color: #000;
-  }
 
-  /*
-   * Base structure
-   */
-
-  html,
-  body {
-    height: 100%;
-  }
-
-  body {
-    display: -ms-flexbox;
-    display: flex;
-  }
-
-  .cover-container {
-    max-width: 42em;
-  }
-
-  /*
-   * Cover
-   */
-  .cover {
-    padding: 0 1.5rem;
+  .hero-foot .content {
+    padding: 50px;
   }
 </style>
