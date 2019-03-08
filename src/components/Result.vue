@@ -1,12 +1,6 @@
 <template>
   <div class="result">
-    <div class="columns is-mobile is-centered">
-      <div class="column is-half">
-        <b-message :title="result.info.title" size="is-small" :closable="false" :type="'is-' + colors">
-         <spam class="is-centered"><a :href="result.request" target="_blank">{{ result.request }}</a></spam>
-        </b-message>
-      </div>
-    </div>
+
     <div class="columns is-mobile is-multiline is-centered">
       <div class="column is-narrow is-full">
         <div class="score" :class="colors">
@@ -14,6 +8,7 @@
             <animate-number :to="rounded" from="1"></animate-number>%
           </div>
           <p class="subtitle">de chance de sua notícia ser totalmente verdadeira.</p>
+          <span class="tag is-black">{{ result.info.title }}</span>
         </div>
         <progress :value="result.score * 100" class="progress is-large" :class="'is-' + colors" max="100">{{result.score}}%</progress>
       </div>

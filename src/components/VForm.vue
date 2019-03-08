@@ -25,7 +25,7 @@
       <div class="columns">
         <div class="column">
           <hr/>
-          <result :result="result"></result>
+          <result :result.sync="result"></result>
         </div>
       </div>
     </b-collapse>
@@ -74,7 +74,9 @@
               };
               _this.hasSubmit = false;
             })
-            .catch(error => console.log(error))
+            .catch(function(error){
+              _this.hasSubmit = false;
+            })
         }
 
       }
