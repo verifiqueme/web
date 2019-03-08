@@ -18,7 +18,7 @@
         <div class="container">
           <div class="content has-text-centered">
             <p>
-              <strong>Olá</strong>
+              <strong>Feito com <i class="fas fa-heart has-text-danger"></i> por <a href="https://twitter.com/guiscaranse" target="_blank">@guiscaranse</a></strong>
             </p>
           </div>
         </div>
