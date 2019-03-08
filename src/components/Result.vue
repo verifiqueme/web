@@ -39,11 +39,7 @@
 <script>
   export default {
     name: "Result",
-    data() {
-      return {
-        result: 50
-      }
-    }
+    props: ['result']
   }
 </script>
 
