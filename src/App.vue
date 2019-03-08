@@ -20,7 +20,7 @@
             <p>
               <strong>Feito com <i class="fas fa-heart has-text-danger"></i> por <a href="https://twitter.com/guiscaranse" target="_blank">@guiscaranse</a></strong>
             </p>
-            <a>
+            <a href="https://github.com/verifiqueme" target="_blank">
               <i class="fab fa-github"></i> Código-fonte
             </a>
           </div>
