@@ -2,9 +2,13 @@
   <div class="app">
     <img alt="" class="logo" src="../assets/logo.svg">
     <h1 class="title">Qual a probabilidade de uma notícia ser verdadeira?</h1>
-    <b-notification :active="online !== 1" :closable="false" type="is-danger" has-icon icon-pack="fa">
-      Servidor está indisponível no momento.
-    </b-notification>
+    <div class="columns is-mobile is-centered">
+      <div class="column is-half">
+        <b-notification :active="online !== 1" :closable="false" type="is-danger">
+          Servidor está indisponível no momento.
+        </b-notification>
+      </div>
+    </div>
     <v-form v-if="online === 1"></v-form>
 
   </div>
