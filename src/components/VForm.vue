@@ -21,11 +21,11 @@
         </div>
       </div>
     </div>
-    <b-collapse :open="false">
+    <b-collapse :open="result">
       <div class="columns">
         <div class="column">
           <hr/>
-          <result></result>
+          <result :result="result"></result>
         </div>
       </div>
     </b-collapse>
@@ -35,6 +35,8 @@
 <script>
   import isUrl from "is-url";
   import Result from "./Result";
+  import base64url from "base64-url";
+  import axios from "axios";
 
   export default {
     name: "v-form",
@@ -44,11 +46,13 @@
     data() {
       return {
         url: "",
-        hasSubmit: false
+        hasSubmit: false,
+        result: null
       }
     },
     methods: {
       enviar() {
+        this.result = null;
         if (!this.url) return;
 
         this.hasSubmit = true;
@@ -57,8 +61,21 @@
             message: 'Insira um endereço válido',
             type: 'is-danger'
           });
+        } else {
+          const _this = this;
+          const encoded = 'https://api.verifique.me/api/' + base64url.encode(this.url);
+          axios
+            .get(encoded)
+            .then(function(response){
+              _this.result = {
+                'info': response.data.info,
+                'score': response.data.response
+              };
+              _this.hasSubmit = false;
+            })
+            .catch(error => console.log(error))
         }
-        this.hasSubmit = false;
+
       }
     }
   }
