@@ -5,7 +5,7 @@
         <div class="field has-addons has-addons-centered">
           <b-tooltip :animated="true" label="Link da notícia" position="is-bottom" type="is-danger">
             <div class="control has-icons-left">
-              <input :disabled="hasSubmit ?  '' : disabled" class="input is-large" type="text"
+              <input :disabled="hasSubmit === true" class="input is-large" type="text"
                      v-model="url">
               <span class="icon is-small is-left">
             <i class="far fa-newspaper"></i>
@@ -13,7 +13,7 @@
             </div>
           </b-tooltip>
           <div class="control">
-            <a :class="{'is-loading': hasSubmit}" :disabled="url ? disabled : ''" @click="enviar"
+            <a :class="{'is-loading': hasSubmit}" :disabled="url.length === 0 " @click="enviar"
                class="button is-danger is-large is-rounded">
               <i class="fas fa-search"></i>
             </a>
@@ -25,7 +25,7 @@
       <div class="columns">
         <div class="column">
           <hr/>
-          <result :result.sync="result"></result>
+          <result :result="result"></result>
         </div>
       </div>
     </b-collapse>
