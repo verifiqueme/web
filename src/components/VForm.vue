@@ -75,6 +75,10 @@
               _this.hasSubmit = false;
             })
             .catch(function(error){
+              _this.$toast.open({
+                message: 'Não foi possível concluir a análise da notícia informada.',
+                type: 'is-danger'
+              });
               _this.hasSubmit = false;
             })
         }
