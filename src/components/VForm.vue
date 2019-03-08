@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <b-collapse :open="result">
+    <b-collapse :open="result !== null">
       <div class="columns">
         <div class="column">
           <hr/>
@@ -68,6 +68,7 @@
             .get(encoded)
             .then(function(response){
               _this.result = {
+                'request': _this.url,
                 'info': response.data.info,
                 'score': response.data.response
               };

@@ -1,19 +1,28 @@
 <template>
   <div class="result">
+    <div class="columns is-mobile is-centered">
+      <div class="column is-half">
+        <b-message :title="result.info.title" size="is-small" :closable="false" :type="'is-' + colors">
+         <spam class="is-centered"><a :href="result.request" target="_blank">{{ result.request }}</a></spam>
+        </b-message>
+      </div>
+    </div>
     <div class="columns is-mobile is-multiline is-centered">
       <div class="column is-narrow is-full">
-        <div class="score danger">
-          <span>{{Math.round(result.score * 100)}}%</span><br>
+        <div class="score" :class="colors">
+          <div class="score-text">
+            <animate-number :to="rounded" from="1"></animate-number>%
+          </div>
           <p class="subtitle">de chance de sua notícia ser totalmente verdadeira.</p>
         </div>
-        <progress class="progress is-large is-danger" :value="result.score * 100" max="100">{{result.score}}%</progress>
+        <progress :value="result.score * 100" class="progress is-large" :class="'is-' + colors" max="100">{{result.score}}%</progress>
       </div>
     </div>
     <div class="columns is-mobile is-multiline is-centered">
       <div class="column is-narrow">
         <p>
           <span class="marker">
-            <animate-number from="1" :to="result.info.words"></animate-number>
+            <animate-number :to="result.info.words" from="1"></animate-number>
           </span><br>
           Palavras analisadas
         </p>
@@ -21,7 +30,7 @@
       <div class="column is-narrow">
         <p>
           <span class="marker">
-            <animate-number from="1" :to="result.info.total"></animate-number>
+            <animate-number :to="result.info.total" from="1"></animate-number>
           </span><br>
           Notícias comparadas
         </p>
@@ -38,14 +47,27 @@
 
 <script>
   import relativeDate from '../scripts/relative-time';
+
   export default {
     name: "Result",
     props: ['result'],
     computed: {
-      // a computed getter
+      rounded: function () {
+        return Math.round(this.result.score * 100);
+      },
       relative: function () {
-        // `this` points to the vm instance
         return relativeDate(new Date(this.result.info.age));
+      },
+      colors: function () {
+        if(this.result.score * 100 >= 80){
+          return 'success'
+        }else if(this.result.score * 100 >= 60){
+          return 'info'
+        }else if(this.result.score * 100 >= 40){
+          return 'warning'
+        }else{
+          return 'danger'
+        }
       }
     }
 
@@ -59,16 +81,28 @@
 
   }
 
-  .score span {
+  .score .score-text {
     font-size: 2.87em;
     font-weight: bold;
   }
 
   .score {
-    padding: 31px
+    padding: 0 31px 31px
   }
 
   .danger {
     color: #ff3860;
   }
+
+  .warning {
+    color: #ffdd57;
+  }
+
+  .success {
+    color: #23d160;
+  }
+  .info{
+    color: #209cee;
+  }
+
 </style>
