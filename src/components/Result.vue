@@ -5,10 +5,24 @@
       <div class="column is-narrow is-full">
         <div :class="colors()" class="score">
           <div class="score-text">
-            <animate-number ref="scoreRounded" from="1"></animate-number>%
+            <animate-number :to="rounded()" from="1" ref="scoreRounded"></animate-number>%
           </div>
           <p class="subtitle">de chance de sua notícia ser totalmente verdadeira.</p>
-          <span class="tag is-black">{{ result.info.title }}</span>
+          <div class="columns is-centered">
+            <div class="column is-narrow is-half">
+              <b-message :type="'is-' + colors()">
+                <strong>{{ result.info.title }}</strong>
+
+                <a :href="result.request" target="_blank" class="news-link">
+                  <b-taglist attached>
+                    <b-tag type="is-dark">por</b-tag>
+                    <b-tag type="is-info">{{result.info.domain}}</b-tag>
+                  </b-taglist>
+                </a>
+
+              </b-message>
+            </div>
+          </div>
         </div>
         <progress :class="'is-' + colors()" :value="result.score * 100" class="progress is-large" max="100">
           {{result.score}}%
@@ -22,7 +36,7 @@
                    position="is-bottom">
           <p>
           <span class="marker">
-            <animate-number ref="wordsAnim" from="1"></animate-number>
+            <animate-number :to="result.info.words" from="1" ref="wordsAnim"></animate-number>
           </span><br>
             Palavras analisadas
           </p>
@@ -34,7 +48,7 @@
                    position="is-bottom">
           <p>
           <span class="marker">
-            <animate-number ref="newsAnim" from="1"></animate-number>
+            <animate-number :to="result.info.total" from="1" ref="newsAnim"></animate-number>
           </span><br>
             Notícias comparadas
           </p>
@@ -129,6 +143,12 @@
 
   .info {
     color: #209cee;
+  }
+  .news-link{
+    text-decoration: none !important;
+  }
+  .news-link span{
+    margin-top: 10px;
   }
 
 </style>
