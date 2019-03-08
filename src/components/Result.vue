@@ -20,26 +20,38 @@
     </div>
     <div class="columns is-mobile is-multiline is-centered">
       <div class="column is-narrow">
+        <b-tooltip label="Palavras são analisadads para procurar padrões comuns em notícias falsas"
+                   position="is-bottom"
+                   animated>
         <p>
           <span class="marker">
             <animate-number :to="result.info.words" from="1"></animate-number>
           </span><br>
           Palavras analisadas
         </p>
+        </b-tooltip>
       </div>
       <div class="column is-narrow">
+        <b-tooltip label="Quando encontramos uma notícia de fonte confiável, comparamos para encontrar coisas em comuns"
+                   position="is-bottom"
+                   animated>
         <p>
           <span class="marker">
             <animate-number :to="result.info.total" from="1"></animate-number>
           </span><br>
           Notícias comparadas
         </p>
+        </b-tooltip>
       </div>
       <div class="column is-narrow">
+        <b-tooltip label="Para evitar abusos em nosso serviço, armazenamos as análises temporariamente."
+                   position="is-bottom"
+                   animated>
         <p>
           <span class="marker">{{ relative }}</span><br>
           desde a última análise desta notícia
         </p>
+        </b-tooltip>
       </div>
     </div>
   </div>
