@@ -1,19 +1,23 @@
 language: node_js
 node_js:
   - '10'
-install:
-  - npm install
 cache:
   npm: true
   directories:
     - node_modules
+
+install:
+  - npm install
+
 script:
   - npm run build
+  - mv index.html dist/index.html
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: true
+  local_dir: dist/
   on:
     branch: master
 
