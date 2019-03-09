@@ -61,6 +61,7 @@
             message: 'Insira um endereço válido',
             type: 'is-danger'
           });
+
         } else {
           const _this = this;
           const encoded = 'https://api.verifique.me/api/' + base64url.encode(this.url);
@@ -72,17 +73,15 @@
                 'info': response.data.info,
                 'score': response.data.response
               };
-              _this.hasSubmit = false;
             })
             .catch(function(error){
               _this.$toast.open({
                 message: 'Não foi possível concluir a análise da notícia informada.',
                 type: 'is-danger'
               });
-              _this.hasSubmit = false;
             })
         }
-
+        this.hasSubmit = false;
       }
     }
   }
