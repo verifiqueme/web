@@ -9,8 +9,10 @@
         </span>
       </div>
       <div class="navbar-menu" :class="{ 'is-active': showNav }">
-        <div :key="item.path" class="navbar-end" v-for="item in items">
+        <div class="navbar-end">
+        <div :key="item.path" v-for="item in items">
           <router-link :to="item.path" active-class="is-active" class="navbar-item" exact>{{ item.name }}</router-link>
+        </div>
         </div>
       </div>
     </div>

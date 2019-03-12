@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <b-collapse :open="result !== null">
+    <b-collapse v-if="result !== null" :open="result !== null">
       <div class="columns">
         <div class="column">
           <hr/>
