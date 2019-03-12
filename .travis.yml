@@ -14,6 +14,7 @@ script:
   - mkdir deploy
   - cp -r index.html deploy/index.html
   - mv ./dist deploy/dist
+  - mv ./static deploy/static
 deploy:
   provider: pages
   skip-cleanup: true
