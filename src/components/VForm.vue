@@ -19,6 +19,9 @@
             </a>
           </div>
         </div>
+
+        <progress v-if="hasSubmit" class="progress is-success is-medium" :value="progress" max="100"></progress>
+
       </div>
     </div>
     <b-collapse v-if="result !== null" :open="result !== null">
@@ -47,14 +50,21 @@
       return {
         url: "",
         hasSubmit: false,
+        progress: 0,
         result: null
       }
     },
+    timers: {
+      counterUp: {name: "counterUp", time: 1000, autostart: true, repeat: true}
+    },
     methods: {
+      counterUp() {
+        this.progress = this.progress + 1.5;
+      },
       enviar() {
         this.result = null;
         if (!this.url) return;
-
+        this.progress = 0;
         this.hasSubmit = true;
         if (!isUrl(this.url)) {
           this.$toast.open({
@@ -78,7 +88,6 @@
             })
             .catch(function (error) {
               _this.hasSubmit = false;
-
               _this.$toast.open({
                 message: 'Não foi possível concluir a análise da notícia informada.',
                 type: 'is-danger'
@@ -96,4 +105,9 @@
       width: 200px
     }
   }
+
+  progress{
+    margin-top: 30px;
+  }
+
 </style>
