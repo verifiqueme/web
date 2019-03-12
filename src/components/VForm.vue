@@ -67,21 +67,24 @@
           const encoded = 'https://api.verifique.me/api/' + base64url.encode(this.url);
           axios
             .get(encoded)
-            .then(function(response){
+            .then(function (response) {
+              _this.hasSubmit = false;
               _this.result = {
                 'request': _this.url,
                 'info': response.data.info,
                 'score': response.data.response
               };
+
             })
-            .catch(function(error){
+            .catch(function (error) {
+              _this.hasSubmit = false;
+
               _this.$toast.open({
                 message: 'Não foi possível concluir a análise da notícia informada.',
                 type: 'is-danger'
               });
             })
         }
-        this.hasSubmit = false;
       }
     }
   }
