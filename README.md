@@ -1,18 +1,29 @@
-# verificame
+<img src="https://cdn.jsdelivr.net/gh/verifiqueme/web@master/src/assets/icon.png" width="123px" alt="verifica.me" align="right">
 
-> A Vue.js project
+# Web
 
-## Build Setup
+![License](https://img.shields.io/github/license/verifiqueme/core.svg)
+
+Este repositório contêm os arquivos que geram o front-end em Vue.js
+
+***
+
+Instalando
+=====
+
+Depende de:
+* [Node.js](https://nodejs.org/en/download/) (10+)
+
+### Instalando dependências
+Instale as dependências do npm e inicie o ambiente virtual:
 
 ``` bash
-# install dependencies
+# instala dependências
 npm install
 
-# serve with hot reload at localhost:8080
+# servir com hot reload em localhost:8080
 npm run dev
 
-# build for production with minification
+# construir para produção usando otimização
 npm run build
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
