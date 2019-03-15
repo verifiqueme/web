@@ -71,7 +71,7 @@
             message: 'Insira um endereço válido',
             type: 'is-danger'
           });
-
+          this.hasSubmit = false;
         } else {
           const _this = this;
           const encoded = 'https://api.verifique.me/api/' + base64url.encode(this.url);
