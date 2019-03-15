@@ -16,7 +16,7 @@
                 <a :href="result.request" target="_blank" class="news-link">
                   <b-taglist attached>
                     <b-tag type="is-dark">por</b-tag>
-                    <b-tag type="is-info">{{result.info.domain}}</b-tag>
+                    <b-tag :type="'is-' + colors()">{{result.info.domain}}</b-tag>
                   </b-taglist>
                 </a>
 
