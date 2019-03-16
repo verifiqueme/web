@@ -43,7 +43,7 @@
     created() {
       setInterval(() => {
         axios
-          .get('https://isitup.org/api.verifique.me.json')
+          .get('https://isitup.org/srv2.verifique.me.json')
           .then(response => (
             this.online = response.data.status_code
           ))

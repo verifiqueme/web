@@ -74,7 +74,7 @@
           this.hasSubmit = false;
         } else {
           const _this = this;
-          const encoded = 'https://api.verifique.me/api/' + base64url.encode(this.url);
+          const encoded = 'https://srv2.verifique.me/api/' + base64url.encode(this.url);
           axios
             .get(encoded)
             .then(function (response) {
