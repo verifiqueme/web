@@ -31,6 +31,11 @@
           <result :result="result"></result>
         </div>
       </div>
+      <div class="columns is-mobile is-centered">
+        <div class="column is-half">
+          <avaliacao></avaliacao>
+        </div>
+      </div>
     </b-collapse>
   </div>
 </template>
@@ -40,11 +45,13 @@
   import Result from "./Result";
   import base64url from "base64-url";
   import axios from "axios";
+  import Avaliacao from "./Avaliacao";
 
   export default {
     name: "v-form",
     components: {
-      Result
+      Result,
+      Avaliacao
     },
     data() {
       return {
