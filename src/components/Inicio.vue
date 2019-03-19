@@ -44,7 +44,7 @@
       if (!webpackHotUpdate) {
         setInterval(() => {
           axios
-            .get('https://isitup.org/srv2.verifique.me.json')
+            .get('https://isitup.org/'+ this.server.replace("https://", '') +'.json')
             .then(response => (
               this.online = response.data.status_code
             ))

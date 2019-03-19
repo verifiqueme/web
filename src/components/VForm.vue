@@ -81,11 +81,7 @@
           this.hasSubmit = false;
         } else {
           const _this = this;
-          let server = 'https://srv2.verifique.me';
-          if (webpackHotUpdate) {
-            server = 'http://localhost:8888';
-          }
-          const encoded = server + '/api/' + base64url.encode(this.url);
+          const encoded = _this.server + '/api/' + base64url.encode(this.url);
           axios
             .get(encoded)
             .then(function (response) {
