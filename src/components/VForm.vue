@@ -33,7 +33,7 @@
       </div>
       <div class="columns is-mobile is-centered">
         <div class="column is-half">
-          <avaliacao></avaliacao>
+          <avaliacao :url="result.request"></avaliacao>
         </div>
       </div>
     </b-collapse>
