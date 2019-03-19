@@ -14,6 +14,11 @@ Vue.use(VueTimers);
 Vue.use(Buefy);
 Vue.use(VueAnimateNumber);
 Vue.config.productionTip = false;
+if (webpackHotUpdate) {
+  Vue.prototype.server = 'http://localhost:8888'
+}else{
+  Vue.prototype.server = 'https://api.verifique.me'
+}
 
 /* eslint-disable no-new */
 new Vue({

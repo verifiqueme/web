@@ -31,6 +31,11 @@
           <result :result="result"></result>
         </div>
       </div>
+      <div class="columns is-mobile is-centered">
+        <div class="column is-half">
+          <avaliacao :url="result.request"></avaliacao>
+        </div>
+      </div>
     </b-collapse>
   </div>
 </template>
@@ -40,11 +45,13 @@
   import Result from "./Result";
   import base64url from "base64-url";
   import axios from "axios";
+  import Avaliacao from "./Avaliacao";
 
   export default {
     name: "v-form",
     components: {
-      Result
+      Result,
+      Avaliacao
     },
     data() {
       return {
@@ -74,7 +81,7 @@
           this.hasSubmit = false;
         } else {
           const _this = this;
-          const encoded = 'https://srv2.verifique.me/api/' + base64url.encode(this.url);
+          const encoded = _this.server + '/api/' + base64url.encode(this.url);
           axios
             .get(encoded)
             .then(function (response) {

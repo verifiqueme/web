@@ -41,14 +41,16 @@
       }
     },
     created() {
-      setInterval(() => {
-        axios
-          .get('https://isitup.org/srv2.verifique.me.json')
-          .then(response => (
-            this.online = response.data.status_code
-          ))
-          .catch(error => this.online = 0)
-      }, 5000);
+      if (!webpackHotUpdate) {
+        setInterval(() => {
+          axios
+            .get('https://isitup.org/'+ this.server.replace("https://", '') +'.json')
+            .then(response => (
+              this.online = response.data.status_code
+            ))
+            .catch(error => this.online = 0)
+        }, 5000);
+      }
     }
   }
 </script>
