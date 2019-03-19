@@ -41,7 +41,7 @@
       }
     },
     created() {
-      if (!webpackHotUpdate) {
+      if (typeof webpackHotUpdate === 'undefined') {
         setInterval(() => {
           axios
             .get('https://isitup.org/'+ this.server.replace("https://", '') +'.json')
