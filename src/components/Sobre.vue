@@ -4,7 +4,7 @@
     <div class="columns is-mobile is-centered">
       <div class="column">
         <b-message :closable="false" size="is-large" title="Sobre" type="is-info">
-          O verifica.me foi originalmente criado por <a href="https://twitter.com/guiscaranse" target="_blank">@guiscaranse</a> como uma readapção
+          O verifique.me foi originalmente criado por <a href="https://twitter.com/guiscaranse" target="_blank">@guiscaranse</a> como uma readapção
           de parte de seu TCC <i>"Uso de Redes Neurais para detecção de notícias falsas na Internet"</i> no Instituto
           Federal de Educação, Ciência e Tecnologia da Bahia.
           É uma ferramenta de código aberto com mais de 80% de precisão, desenvolvida utilizando Python e Vue.js.<br>
