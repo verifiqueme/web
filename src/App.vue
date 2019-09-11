@@ -20,10 +20,6 @@
             <p>
               <strong>Feito com <i class="fas fa-heart has-text-danger"></i> por <a href="https://twitter.com/guiscaranse" target="_blank">@guiscaranse</a></strong>
             </p>
-            <p>
-              Hospedado por: <br>
-              <a href="https://central.serversp.com/link.php?id=54" target="_blank"><img src="/static/serversp.png" alt="ServerSP"/></a>
-            </p>
             <a href="https://github.com/verifiqueme" target="_blank">
               <i class="fab fa-github"></i> Código-fonte
             </a>
