@@ -32,7 +32,7 @@
     },
     data() {
       return {
-        online: 1
+        online: 0
       }
     },
     watch: {
