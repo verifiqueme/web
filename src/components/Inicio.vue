@@ -4,13 +4,6 @@
     <h1 class="title">Qual a probabilidade de uma notícia ser verdadeira?</h1>
     <div class="columns is-mobile is-centered">
       <div class="column is-half">
-        <b-notification :closable="false" type="is-info">
-          Estamos migrando de servidor, aguarde por melhorias. Prazo de retorno <strong>1 semana.</strong>
-        </b-notification>
-      </div>
-    </div>
-    <div class="columns is-mobile is-centered">
-      <div class="column is-half">
         <b-notification :active="online !== 1" :closable="false" type="is-danger">
           Servidor está indisponível no momento.
         </b-notification>
@@ -32,7 +25,7 @@
     },
     data() {
       return {
-        online: 0
+        online: 1
       }
     },
     watch: {
