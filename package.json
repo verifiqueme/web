@@ -14,7 +14,7 @@
     "base64-url": "^2.2.0",
     "buefy": "^0.7.2",
     "is-url": "^1.2.4",
-    "jquery": "^3.4.0",
+    "jquery": "^3.5.0",
     "vue": "^2.6.7",
     "vue-animate-number": "^0.4.2",
     "vue-router": "^3.0.2",
